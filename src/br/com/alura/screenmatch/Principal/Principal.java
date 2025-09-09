@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.Principal;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -24,18 +26,14 @@ public class Principal {
         //meuFilme.totalDeAvaliacoes = 1;
         //System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("DogVille",2023 );
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -53,9 +51,7 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("DogVille");
-        filmeDoPaulo.setAnoDeLancamento(2003);
+        Filme filmeDoPaulo = new Filme("DogVille", 2003);
         filmeDoPaulo.setDuracaoEmMinutos(200);
         filmeDoPaulo.avalia(10);
 
@@ -67,6 +63,8 @@ public class Principal {
         System.out.println("Tamanho da lista: " +listaDeFilmes.size());
         System.out.println("Primeiro Filme: " +listaDeFilmes.get(0));
         System.out.println(listaDeFilmes);
+
+        Filme favorito = new Filme("The Matrix", 1999);
 
     }
 }
