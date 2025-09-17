@@ -13,13 +13,14 @@ public class PrincipalComBusca  {
         System.out.println("Digite o nome do filme para busca: ");
         var busca = leitura.nextLine();
 
-        String chave = "COLOQUE AQUI A SUA CHAVE DO OMDb";
-        String endereco = "https://www.omdbapi.com/?t=" +busca + "&apikey=" + 39890356;
+        String chave = "39890356";
+        String endereco = "https://www.omdbapi.com/?t=" +busca + "&apikey=" + chave;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         System.out.println(response.body());
+        
     }
 }
